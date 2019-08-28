@@ -56,7 +56,8 @@ Action
 2. We can use `CSS-in-JS`
 3. For Development we can use `Redux Dev Tools` for testing our Redux States.
 4. Bootstrap and Material-UI is really great but if not used properly it can make the Project File really large.
-5. We can work on the repeating codes in our Project by creating a config object and map it base on the content:
+5. Update package/libraries to avoid security issues.
+6. We can work on the repeating codes in our Project by creating a config object and map it base on the content:
     ```js
       <FilterLink
         filter={VisibilityFilters.SHOW_ALL}
