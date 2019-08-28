@@ -5,6 +5,47 @@
 2. Install Dependencies with ```npm install``` or ```yarn```
 3. Run the project ```npm run start``` or ```yarn start```
 
+##### Bug Fix
+For the Issues that I found I added a Comment Block near the issue with this format
+```js
+  /*
+  ** ISSUE: when passed down to the connected COMPONENT Link onClick is being passed as Object
+  ** FROM: onClick: dispatch(setVisibilityFilter(ownProps.filter))
+  ** TO: onClick: () => dispatch(setVisibilityFilter(ownProps.filter))
+  */
+``````
+
+##### Delete Feature
+I added the delete feature in the `todos action and reducer`
+
+Reducer
+```js
+  case 'ADD_TODO':
+      return [
+        ...state,
+        {
+          id: action.id,
+          text: action.text,
+          completed: false
+        }
+      ]
+    case 'TOGGLE_TODO':
+      return state.map(todo =>
+        (todo.id === action.id)
+          ? { ...todo, completed: !todo.completed }
+          : todo
+      )
+    case 'REMOVE_TODO':
+      return state.filter(item => item.id !== action.id)
+```
+Action
+```js
+  export const removeTodo = id => ({
+    type: 'REMOVE_TODO',
+    id
+  })
+
+```
 
 ##### Added Library
 1. redux-devtools-extension
